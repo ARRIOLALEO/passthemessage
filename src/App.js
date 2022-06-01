@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state = {isOn:false}
+  }
+  render(){
+    const url = this.state.isOn ? "https://media2.giphy.com/media/26BkNrGhy4DKnbD9u/giphy.gif?cid=ecf05e476l7j8ye6ksk1brmu0rncumn9fmukoj9p262btao8&rid=giphy.gif": "https://media2.giphy.com/media/26BkNrGhy4DKnbD9u/giphy_s.gif?cid=ecf05e476l7j8ye6ksk1brmu0rncumn9fmukoj9p262btao8&rid=giphy_s.gif"
+    return(<>
+    <h1>Click the button to turn on/off the light</h1>
+    <img src= {url}/>
+    <button onClick={()=> this.setState({isOn:!this.state.isOn})}>Turn On / Turn Off</button>
+    </>)
+  }
 }
 
-export default App;
+export default App
